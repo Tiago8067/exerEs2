@@ -1,0 +1,36 @@
+@page
+@model WebApplication2.Views.Meals
+
+@{
+    ViewData["Title"] = "Meals List";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+@*<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>*@
+    <h1>Meals</h1>
+        <p>Welcome to the page where all meals <are></are> listed</p>
+        <table style="width: 100%">
+            <tr><th>Name</th>
+                <th>Calories</th>
+                <th>User</th>
+                <th>Date</th>
+            </tr>
+            @foreach (var meal in Model.Meal)
+            {
+                <tr><td>@meal.Name</td>
+                    <td>@meal.Calories</td>
+                    <td>@meal.UserName</td>
+                    <td>@meal.Date.ToShortDateString()</td>
+                </tr>
+            }
+        </table>
+@*</div>
+</body>
+</html>*@
